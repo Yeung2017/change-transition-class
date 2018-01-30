@@ -1,5 +1,5 @@
 # change-transition-class
-基于jQuery的向元素添加css过渡效果并且当display为none时仍然适用
+基于jQuery的显示或隐藏元素,并在过程中应用css过渡效果
 ## 安装依赖
 ```
 yarn
@@ -13,7 +13,7 @@ yarn build
 ```
 yarn start
 ```
-demo在demo目录下，服务器运行后可以在http://localhost:1234/demo.html进行查看
+demo在demo目录下，服务器运行后可以在 http://localhost:1234/demo.html 进行查看
 ## 完整示例
 ```html
 <!DOCTYPE html>
