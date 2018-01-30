@@ -1,0 +1,15 @@
+{
+  "name": "change-transition-class",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Yeung2017/change-transition-class.git",
+  "author": "Yeung2017 <ciutzhaoyun@163.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel demo/demo.html",
+    "build": "parcel build src/jquery.change-transition-class.js"
+  },
+  "dependencies": {
+    "parcel-bundler": "^1.5.1"
+  }
+}
