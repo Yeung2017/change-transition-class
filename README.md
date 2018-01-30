@@ -80,7 +80,7 @@ demo在demo目录下，服务器运行后可以在 http://localhost:1234/demo.ht
   <script>
     $(function(){
       $(document).on('click','#btn',function(){
-        $('.box--01').hasClass('in') ? $('.box').transitionClassToHide('in',function(){
+        $('.box').eq(0).hasClass('in') ? $('.box').transitionClassToHide('in',function(){
           console.log('隐藏完毕');
           console.log($(this));
         }) : $('.box').transitionClassToShow('in',function(){
