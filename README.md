@@ -14,7 +14,7 @@ yarn build
 yarn start
 ```
 demo在demo目录下，服务器运行后可以在http://localhost:1234/demo.html进行查看
-##完整示例
+## 完整示例
 ```html
 <!DOCTYPE html>
 <html lang="en">
