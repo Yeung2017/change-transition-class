@@ -55,11 +55,11 @@ demo在demo目录下，服务器运行后可以在 http://localhost:1234/demo.ht
       transform: translate3d(0,0,0);
     }
 
-    .box--01 {
+    .box:nth-child(2) {
       top: 100px;
       background-color:royalblue;
     }
-    .box--02 {
+    .box:nth-child(3) {
       top: 200px;
       background-color: brown;
     }
@@ -72,8 +72,8 @@ demo在demo目录下，服务器运行后可以在 http://localhost:1234/demo.ht
 <body>
   <div class="wrapper">
     <button id="btn" class="btn">显示/隐藏</button>
-    <div class="box box--01 fade" style="display:none;"></div>
-    <div class="box box--02 fade"></div>
+    <div class="box fade" style="display:none;"></div>
+    <div class="box fade"></div>
   </div>
   <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
   <script src="../dist/jquery.change-transition-class.js"></script>
@@ -86,10 +86,12 @@ demo在demo目录下，服务器运行后可以在 http://localhost:1234/demo.ht
         }) : $('.box').transitionClassToShow('in',function(){
           console.log('显示完毕');
           console.log($(this));
-        }); 
+        });
       });
     });
   </script>
 </body>
 </html>
 ```
+## 浏览器兼容性
+未测,但应该和引用的jQuery一致
