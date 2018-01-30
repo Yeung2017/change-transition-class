@@ -29,16 +29,21 @@
     return $(this).each(function(){
       var $this = $(this);
       var cb = callback.bind(this);
+      // transitionshow只能有一个handle
+      $this.off('transitionshow transitionhide').one('transitionshow',function(){
+        if($this.hasClass(className)) {
+          cb();
+        }
+      });
       if(!transitionEnd) {
         $this.show();
         cb();
       }else if(!$this.hasClass(className)){
         $this.show().css('display');
         $this.addClass(className);
+        
         $this.one(transitionEnd.end,function(){
-          if($this.hasClass(className)) {
-            cb();
-          }
+          $this.trigger('transitionshow');
         })
       }
     });
@@ -50,15 +55,19 @@
     return $(this).each(function(){
       var $this = $(this);
       var cb = callback.bind(this);
+      // transitionhide只能有一个handle
+      $this.off('transitionshow transitionhide').one('transitionhide',function(){
+        if(!$this.hasClass(className)) {
+          cb();
+        }
+      });
       if(!transitionEnd) {
         $this.hide();
         cb();
       }else if($this.hasClass(className)){
         $this.removeClass(className);
         $this.one(transitionEnd.end,function(){
-          if(!$this.hasClass(className)) {
-            cb();
-          }
+          $this.trigger('transitionhide');
         })
       }
     });
