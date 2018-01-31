@@ -36,12 +36,10 @@
         }
       });
       if(!transitionEnd) {
-        $this.show();
-        cb();
+        $this.addClass(className).show().trigger('transitionshow');
       }else if(!$this.hasClass(className)){
         $this.show().css('display');
         $this.addClass(className);
-        
         $this.one(transitionEnd.end,function(){
           $this.trigger('transitionshow');
         })
@@ -62,8 +60,7 @@
         }
       });
       if(!transitionEnd) {
-        $this.hide();
-        cb();
+        $this.removeClass(className).hide().trigger('transitionhide');
       }else if($this.hasClass(className)){
         $this.removeClass(className);
         $this.one(transitionEnd.end,function(){
